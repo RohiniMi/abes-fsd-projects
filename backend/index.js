@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
-import loginRoutes from './routes/login.js';
+import userRoute from './routes/login.js';
+// const userRoute = require("./routes/login.js");
+// const express = require("express");
+// const cors = require("cors");
 
 const port = 8800;
 
@@ -8,10 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 // app.use(cors({
-//     origin:'http://localhost:5500'
-//   }));
+//     origin: 'http://localhost:5500'
+// }));
 
-app.use("/login",loginRoutes)
+app.use("/login", userRoute)
 app.listen(port, () => { console.log(`Listening on port ${port}`); });
 
 // app.post("/", (req, res) => {

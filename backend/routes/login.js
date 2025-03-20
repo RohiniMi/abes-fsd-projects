@@ -7,15 +7,20 @@ const userLogin = async (req, res) => {
     const data = req.body;
     const userLoginData = await loginService(data);
     res.json({message:userLoginData});
+    
 }
 const loginService = async (data) => {
-    const existingUser = users.find((e) => e.email === data.email);
-    if (!existingUser[0]){
-        if(existingUser.username === data.username && existingUser.password === data.password) return "login successful";
-        else return "Password or email error";
+    const {email,password} = users.find((e) => e.email === data.email);  
+    // const{id,name,email}=req.body;
+    
+    if (!email){
+        return "ID does not exist. Please click on signup";
+    }      
+    else{
+        if(password === data.password) return "login successful";
+        else return "Password or username error";
     } 
-        
-    else "user does not exist";
 }
+// userLogin();
 router.post('/', userLogin);
 export default router;

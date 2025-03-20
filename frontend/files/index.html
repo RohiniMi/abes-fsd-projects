@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../style/index.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <span id="error-login"></span>
+        <!-- <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+            <div class="error" id="usernameError"></div>
+        </div> -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <div class="error" id="emailError"></div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <div class="error" id="passwordError"></div>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <span color="grey">Don't have an account?</span>
+        <span id="new-user" onclick="window.location.href='./signup.html'">Create Account</span>
+    </div>
+    <script async src="../src/index.js"></script>
+
+</body>
+
+</html>
